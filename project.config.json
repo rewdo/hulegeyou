@@ -1,0 +1,70 @@
+{
+  "description": "《忽了个悠》反诈主题微信小游戏",
+  "compileType": "game",
+  "libVersion": "2.32.3",
+  "appid": "wx5890cbc3c95f6599",
+  "projectname": "hulegeyou",
+  "packOptions": {
+    "ignore": [
+      {
+        "value": "backend",
+        "type": "folder"
+      },
+      {
+        "value": "database",
+        "type": "folder"
+      },
+      {
+        "value": "docs",
+        "type": "folder"
+      },
+      {
+        "value": "resources",
+        "type": "folder"
+      },
+      {
+        "value": "DELIVERY.md",
+        "type": "file"
+      },
+      {
+        "value": "PROJECT_SUMMARY.md",
+        "type": "file"
+      },
+      {
+        "value": "deploy.sh",
+        "type": "file"
+      }
+    ],
+    "include": []
+  },
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": true,
+    "minifyWXML": true,
+    "minifyWXSS": true,
+    "coverView": true,
+    "autoAudits": false,
+    "uglifyFileName": false,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useIsolateContext": true,
+    "useMultiFrameRuntime": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useCompilerPlugins": false,
+    "packNpmManually": false,
+    "packNpmRelationList": []
+  },
+  "condition": {},
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  },
+  "simulatorPluginLibVersion": {}
+}
