@@ -12,7 +12,7 @@ export class LevelSelectScene extends Phaser.Scene {
     const height = this.cameras.main.height;
     
     // 背景
-    this.add.rectangle(width / 2, height / 2, width, height, 0xF5F2E9);
+    this.add.image(width / 2, height / 2, 'bg_start').setDisplaySize(width, height);
     
     // 顶部信息栏
     this.createTopBar(width, height);
@@ -41,12 +41,11 @@ export class LevelSelectScene extends Phaser.Scene {
   }
   
   createTopBar(width, height) {
-    const topBar = this.add.graphics();
-    topBar.fillStyle(0x333333, 0.95);
-    topBar.fillRect(0, 0, width, 100);
+    // 顶部信息栏背景
+    this.add.image(width / 2, 50, 'bg_top_bar').setDisplaySize(width, 100);
     
-    // 金币显示
-    const goldIcon = this.add.text(40, 35, '💰', { fontSize: '32px' });
+    // 金币图标 + 数量
+    this.add.image(50, 50, 'icon_gold').setScale(0.3);
     const goldText = this.add.text(85, 40, `${GameGlobal.gameData.goldCoins}`, {
       fontFamily: 'Arial',
       fontSize: '28px',
@@ -54,16 +53,22 @@ export class LevelSelectScene extends Phaser.Scene {
       fontStyle: 'bold'
     });
     
-    // 等级显示
-    const levelText = this.add.text(width - 150, 40, `Lv.${GameGlobal.gameData.roleLevel}`, {
+    // 等级图标 + 等级
+    this.add.image(width - 140, 50, 'icon_level').setScale(0.25);
+    const levelText = this.add.text(width - 115, 40, `Lv.${GameGlobal.gameData.roleLevel}`, {
       fontFamily: 'Arial',
       fontSize: '24px',
       color: '#FFFFFF'
     });
     
     // 商城按钮
-    const shopBtn = this.add.text(width - 80, 35, '🛒', { fontSize: '32px' })
+    const shopBtn = this.add.image(width - 60, 50, 'icon_gold').setScale(0.35)
       .setInteractive({ useHandCursor: true });
+    this.add.text(width - 60, 80, '商城', {
+      fontFamily: 'Arial',
+      fontSize: '14px',
+      color: '#FFD700'
+    }).setOrigin(0.5, 0);
     
     shopBtn.on('pointerdown', () => {
       this.scene.start('ShopScene');

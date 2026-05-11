@@ -16,15 +16,17 @@ export class ResultScene extends Phaser.Scene {
     this.failCount = data.failCount;
     this.goldCoins = data.goldCoins;
     
-    // 背景
-    this.add.rectangle(width / 2, height / 2, width, height, this.isPass ? 0xE8F5E9 : 0xFFEBEE);
+    // 根据结果选择背景
+    const bgKey = this.isPass ? 'bg_result_pass' : 'bg_result_fail';
+    this.add.image(width / 2, height / 2, bgKey).setDisplaySize(width, height);
     
     // 结果图标
-    const icon = this.isPass ? '🎉' : '😢';
+    const iconKey = this.isPass ? 'icon_success' : 'icon_fail';
+    this.add.image(width / 2, height * 0.27, iconKey).setScale(0.7);
+    
+    // 结果文字
     const resultText = this.isPass ? '闯关成功！' : '闯关失败';
     const color = this.isPass ? 0x4CAF50 : 0xF44336;
-    
-    this.add.text(width / 2, height * 0.25, `${icon}`, { fontSize: '100px' }).setOrigin(0.5);
     
     this.add.text(width / 2, height * 0.38, resultText, {
       fontFamily: 'Arial',

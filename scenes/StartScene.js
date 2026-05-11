@@ -11,22 +11,11 @@ export class StartScene extends Phaser.Scene {
     const width = this.cameras.main.width;
     const height = this.cameras.main.height;
     
-    // 背景
-    this.add.rectangle(width / 2, height / 2, width, height, 0xF5F2E9);
+    // 启动页背景（带墨水瓶+简笔画装饰）
+    this.add.image(width / 2, height / 2, 'bg_start').setDisplaySize(width, height);
     
-    // 墨痕装饰（简化版，实际应使用图片）
-    const inkDecor = this.add.graphics();
-    inkDecor.fillStyle(0x333333, 0.1);
-    inkDecor.fillCircle(width * 0.2, height * 0.3, 100);
-    inkDecor.fillCircle(width * 0.8, height * 0.7, 150);
-    
-    // 游戏标题
-    const title = this.add.text(width / 2, height * 0.25, '忽了个悠', {
-      fontFamily: 'Arial',
-      fontSize: '72px',
-      color: '#333333',
-      fontStyle: 'bold'
-    }).setOrigin(0.5);
+    // 游戏标题 Logo
+    this.add.image(width / 2, height * 0.22, 'logo_title').setScale(1.5);
     
     // 副标题
     const subtitle = this.add.text(width / 2, height * 0.32, '反诈科普·寓教于乐', {
@@ -35,11 +24,8 @@ export class StartScene extends Phaser.Scene {
       color: '#666666'
     }).setOrigin(0.5);
     
-    // 简笔画角色（占位，实际应使用图片）
-    const character = this.add.graphics();
-    character.fillStyle(0x333333, 1);
-    character.fillCircle(width / 2, height * 0.45, 60); // 头
-    character.fillRect(width / 2 - 40, height * 0.52, 80, 100); // 身体
+    // 简笔画角色
+    this.add.image(width / 2, height * 0.46, 'character_default').setScale(1.3);
     
     // 开始游戏按钮
     const startBtn = this.add.text(width / 2, height * 0.65, '开始游戏', {

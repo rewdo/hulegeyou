@@ -164,7 +164,7 @@ router.post('/buyProp', async (req, res) => {
       return res.status(400).json({ code: 400, message: '参数不完整' });
     }
     
-    const propPrices = { 'detector': 600, 'stopLoss': 400, 'revert': 300 };
+    const propPrices = { 'detector': 600, 'stopLoss': 400, 'revert': 300, 'doubleGold': 200, 'skip': 150, 'hint': 100 };
     const price = propPrices[propType];
     if (!price) {
       return res.status(400).json({ code: 400, message: '未知道具类型' });
@@ -190,6 +190,38 @@ router.post('/buyProp', async (req, res) => {
   } catch (error) {
     console.error('购买道具错误:', error);
     res.status(500).json({ code: 500, message: '购买失败：' + error.message });
+  }
+});
+
+/**
+ * 消耗道具
+ * POST /api/user/consumeProp
+ */
+router.post('/consumeProp', async (req, res) => {
+  try {
+    const { openid, propId } = req.body;
+    if (!openid || !propId) {
+      return res.status(400).json({ code: 400, message: '参数不完整' });
+    }
+
+    const users = await db.query('SELECT props FROM userInfo WHERE openid = ?', [openid]);
+    if (users.length === 0) {
+      return res.status(404).json({ code: 404, message: '用户不存在' });
+    }
+
+    const props = JSON.parse(users[0].props || '[]');
+    const idx = props.findIndex(p => p.id === propId || p.type === propId);
+    if (idx === -1) {
+      return res.status(400).json({ code: 400, message: '道具不存在' });
+    }
+
+    props.splice(idx, 1);
+    await db.query('UPDATE userInfo SET props = ? WHERE openid = ?', [JSON.stringify(props), openid]);
+
+    res.json({ code: 200, message: '消耗成功', data: { props } });
+  } catch (error) {
+    console.error('消耗道具错误:', error);
+    res.status(500).json({ code: 500, message: '消耗失败：' + error.message });
   }
 });
 

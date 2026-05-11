@@ -56,20 +56,49 @@ export class BootScene extends Phaser.Scene {
       loadingText.destroy();
     });
     
-    // 加载资源（实际项目中替换为真实资源路径）
-    // 这里使用占位图形，实际应加载图片资源
-    this.load.image('bg_start', 'assets/images/bg_start.png');
-    this.load.image('character_default', 'assets/images/character_default.png');
-    this.load.image('btn_start', 'assets/images/btn_start.png');
-    this.load.image('btn_help', 'assets/images/btn_help.png');
-    this.load.image('icon_gold', 'assets/images/icon_gold.png');
-    this.load.image('icon_level', 'assets/images/icon_level.png');
+    // 加载美术资源（SVG 矢量贴图）
+    // ===== 主背景 =====
+    this.load.image('bg_start', 'assets/images/bg_start.svg');
+    this.load.image('bg_game_scene', 'assets/images/bg_game_scene.svg');
+    this.load.image('bg_result_pass', 'assets/images/bg_result_pass.svg');
+    this.load.image('bg_result_fail', 'assets/images/bg_result_fail.svg');
+    this.load.image('bg_top_bar', 'assets/images/bg_top_bar.svg');
+    this.load.image('bg_prop_bar', 'assets/images/bg_prop_bar.svg');
+    this.load.image('bg_dialog', 'assets/images/bg_dialog.svg');
+
+    // ===== 角色与 NPC =====
+    this.load.image('character_default', 'assets/images/character_default.svg');
+    this.load.image('npc_professor', 'assets/images/npc_professor.svg');
+
+    // ===== UI 按钮 =====
+    this.load.image('btn_start', 'assets/images/btn_start.svg');
+    this.load.image('btn_help', 'assets/images/btn_help.svg');
+    this.load.image('btn_pause', 'assets/images/btn_pause.svg');
+
+    // ===== 道具图标 =====
+    this.load.image('btn_detector', 'assets/images/btn_detector.svg');
+    this.load.image('btn_stopLoss', 'assets/images/btn_stopLoss.svg');
+    this.load.image('btn_revert', 'assets/images/btn_revert.svg');
+
+    // ===== 状态图标 =====
+    this.load.image('icon_gold', 'assets/images/icon_gold.svg');
+    this.load.image('icon_level', 'assets/images/icon_level.svg');
+    this.load.image('icon_success', 'assets/images/icon_success.svg');
+    this.load.image('icon_fail', 'assets/images/icon_fail.svg');
+    this.load.image('icon_coin', 'assets/images/icon_coin.svg');
+
+    // ===== 游戏标题 =====
+    this.load.image('logo_title', 'assets/images/logo_title.svg');
     
     // 加载音效
-    this.load.audio('bgm_main', 'assets/audio/bgm_main.mp3');
-    this.load.audio('sfx_click', 'assets/audio/sfx_click.mp3');
-    this.load.audio('sfx_success', 'assets/audio/sfx_success.mp3');
-    this.load.audio('sfx_fail', 'assets/audio/sfx_fail.mp3');
+    this.load.audio('bgm_main', 'assets/audio/bgm_main.wav');
+    this.load.audio('sfx_click', 'assets/audio/sfx_click.wav');
+    this.load.audio('sfx_success', 'assets/audio/sfx_success.wav');
+    this.load.audio('sfx_fail', 'assets/audio/sfx_fail.wav');
+    this.load.audio('sfx_coin', 'assets/audio/sfx_coin.wav');
+    this.load.audio('sfx_levelup', 'assets/audio/sfx_levelup.wav');
+    this.load.audio('sfx_open', 'assets/audio/sfx_open.wav');
+    this.load.audio('sfx_move', 'assets/audio/sfx_move.wav');
   }
 
   create() {

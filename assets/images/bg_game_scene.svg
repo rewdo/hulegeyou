@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 1334" width="750" height="1334">
+  <rect width="750" height="1334" fill="#F5F2E9"/>
+  <!-- 场景装饰框 -->
+  <rect x="40" y="100" width="670" height="1100" rx="10" ry="10" fill="none" stroke="#333333" stroke-width="2" opacity="0.15"/>
+  <!-- 顶部装饰线 -->
+  <g stroke="#333333" stroke-width="1.5" opacity="0.08">
+    <path d="M40,95 L710,95"/>
+    <path d="M40,1200 L710,1200"/>
+  </g>
+  <!-- 网格装饰 -->
+  <g stroke="#333333" stroke-width="0.5" opacity="0.04">
+    <path d="M370,100 L370,1200"/>
+    <path d="M40,650 L710,650"/>
+  </g>
+  <!-- 角落装饰 - 简笔画小植物 -->
+  <g fill="none" stroke="#333333" stroke-width="1.5" opacity="0.1">
+    <path d="M60,1130 Q70,1100 100,1090"/>
+    <path d="M60,1130 Q80,1110 110,1120"/>
+    <path d="M690,130 Q700,160 730,170"/>
+    <path d="M690,130 Q710,150 740,140"/>
+  </g>
+  <!-- 中央场地指示 -->
+  <text x="375" y="660" font-family="sans-serif" font-size="32" fill="#333333" opacity="0.08" text-anchor="middle" dominant-baseline="central">探索区域</text>
+</svg>

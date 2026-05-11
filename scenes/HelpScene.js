@@ -12,10 +12,10 @@ export class HelpScene extends Phaser.Scene {
     const height = this.cameras.main.height;
     
     // 背景
-    this.add.rectangle(width / 2, height / 2, width, height, 0xF5F2E9);
+    this.add.image(width / 2, height / 2, 'bg_start').setDisplaySize(width, height);
     
     // 标题
-    this.add.text(width / 2, 50, '📖 游戏帮助', {
+    this.add.text(width / 2, 50, '游戏帮助', {
       fontFamily: 'Arial',
       fontSize: '42px',
       color: '#333333',

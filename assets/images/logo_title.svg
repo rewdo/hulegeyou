@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <g fill="none" stroke="#333333" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- 墨水瓶轮廓 -->
+    <ellipse cx="100" cy="145" rx="45" ry="12"/>
+    <path d="M55,145 L55,100 Q55,88 70,82 L100,70 L130,82 Q145,88 145,100 L145,145"/>
+    <!-- 瓶口 -->
+    <path d="M80,82 L80,50 Q80,40 100,40 Q120,40 120,50 L120,82"/>
+    <!-- 墨水 -->
+    <path d="M65,120 Q80,110 100,120 Q120,130 135,120" stroke="#333333" stroke-width="1.5" opacity="0.3"/>
+    <!-- 从瓶口飘出的文字气泡 -->
+    <path d="M100,30 Q100,10 120,8 Q140,6 140,20 Q140,34 120,36 Q110,37 105,40" fill="#FFFFFF"/>
+    <!-- 气泡内的"悠"字 -->
+    <text x="124" y="28" font-family="serif" font-size="20" fill="#D93A3A" font-weight="bold" text-anchor="middle" dominant-baseline="central">悠</text>
+    <!-- 装饰小点 -->
+    <circle cx="50" cy="55" r="3" fill="#D93A3A" opacity="0.5"/>
+    <circle cx="35" cy="80" r="2" fill="#D93A3A" opacity="0.3"/>
+    <circle cx="155" cy="55" r="3" fill="#D93A3A" opacity="0.5"/>
+    <circle cx="165" cy="80" r="2" fill="#D93A3A" opacity="0.3"/>
+  </g>
+</svg>

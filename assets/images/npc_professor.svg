@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <g fill="none" stroke="#333333" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- 头 -->
+    <circle cx="100" cy="55" r="30"/>
+    <!-- 眼镜 -->
+    <circle cx="88" cy="52" r="10"/>
+    <circle cx="112" cy="52" r="10"/>
+    <line x1="98" y1="52" x2="102" y2="52" stroke-width="1.5"/>
+    <!-- 眼睛小点 -->
+    <circle cx="88" cy="52" r="2.5" fill="#333333"/>
+    <circle cx="112" cy="52" r="2.5" fill="#333333"/>
+    <!-- 微笑 -->
+    <path d="M90,65 Q100,73 110,65"/>
+    <!-- 身体 -->
+    <path d="M100,85 L100,135"/>
+    <!-- 手臂 -->
+    <path d="M100,95 L60,115" stroke-width="4"/>
+    <path d="M100,95 L140,115" stroke-width="4"/>
+    <!-- 腿 -->
+    <path d="M100,135 L70,175"/>
+    <path d="M100,135 L130,175"/>
+    <!-- 书本在左手 -->
+    <rect x="30" y="100" width="25" height="30" rx="2" fill="#FFFFFF" stroke-width="2"/>
+    <line x1="35" y1="108" x2="50" y2="108" stroke-width="1.5"/>
+    <line x1="35" y1="115" x2="50" y2="115" stroke-width="1.5"/>
+    <line x1="35" y1="122" x2="45" y2="122" stroke-width="1.5"/>
+  </g>
+</svg>

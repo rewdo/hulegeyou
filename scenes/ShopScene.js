@@ -12,10 +12,10 @@ export class ShopScene extends Phaser.Scene {
     const height = this.cameras.main.height;
     
     // 背景
-    this.add.rectangle(width / 2, height / 2, width, height, 0xF5F2E9);
+    this.add.image(width / 2, height / 2, 'bg_start').setDisplaySize(width, height);
     
     // 标题
-    this.add.text(width / 2, 60, '🛒 道具商城', {
+    this.add.text(width / 2, 60, '道具商城', {
       fontFamily: 'Arial',
       fontSize: '42px',
       color: '#333333',
@@ -23,69 +23,75 @@ export class ShopScene extends Phaser.Scene {
     }).setOrigin(0.5, 0);
     
     // 金币显示
-    this.add.text(width - 50, 60, `💰 ${GameGlobal.gameData.goldCoins}`, {
+    this.add.image(width - 60, 70, 'icon_gold').setScale(0.3);
+    this.add.text(width - 40, 55, `${GameGlobal.gameData.goldCoins}`, {
       fontFamily: 'Arial',
       fontSize: '32px',
       color: '#FFD700',
       fontStyle: 'bold'
-    }).setOrigin(1, 0);
+    });
     
     // 道具列表
     const props = [
-      { id: 'detector', name: '🔍 漏洞探测器', desc: '提示当前事件风险等级', price: 600 },
-      { id: 'stopLoss', name: '🛡️ 止损卡', desc: '失败时减少 50% 惩罚', price: 400 },
-      { id: 'revert', name: '↩️ 撤销卡', desc: '撤销一次错误判断', price: 300 }
+      { id: 'detector', imgKey: 'btn_detector', name: '漏洞探测器', desc: '提示当前事件风险等级', price: 600 },
+      { id: 'stopLoss', imgKey: 'btn_stopLoss', name: '止损卡', desc: '失败时减少 50% 惩罚', price: 400 },
+      { id: 'revert', imgKey: 'btn_revert', name: '撤销卡', desc: '撤销一次错误判断', price: 300 },
+      { id: 'doubleGold', imgKey: 'btn_doubleGold', name: '双倍金币卡', desc: '本次金币奖励翻倍', price: 200 },
+      { id: 'skip', imgKey: 'btn_skip', name: '跳过卡', desc: '跳过当前事件', price: 150 },
+      { id: 'hint', imgKey: 'btn_hint', name: '提示卡', desc: '显示 50% 正确提示', price: 100 }
     ];
     
-    let yPos = 150;
+    let yPos = 120;
+    const cardHeight = 85;
     props.forEach(prop => {
       // 道具卡片背景
       const card = this.add.graphics();
       card.fillStyle(0xFFFFFF, 1);
-      card.fillRoundedRect(width * 0.1, yPos, width * 0.8, 100, 10);
+      card.fillRoundedRect(width * 0.1, yPos, width * 0.8, cardHeight, 10);
       card.lineStyle(2, 0x333333);
-      card.strokeRoundedRect(width * 0.1, yPos, width * 0.8, 100, 10);
+      card.strokeRoundedRect(width * 0.1, yPos, width * 0.8, cardHeight, 10);
       
       // 道具图标
-      this.add.text(width * 0.15, yPos + 25, prop.name.split(' ')[0], { fontSize: '48px' });
+      this.add.image(width * 0.16, yPos + cardHeight / 2, prop.imgKey).setScale(0.3);
       
       // 道具名称
-      this.add.text(width * 0.28, yPos + 15, prop.name.split(' ').slice(1).join(' '), {
+      this.add.text(width * 0.28, yPos + 10, prop.name, {
         fontFamily: 'Arial',
-        fontSize: '28px',
+        fontSize: '24px',
         color: '#333333',
         fontStyle: 'bold'
       });
       
       // 道具描述
-      this.add.text(width * 0.28, yPos + 50, prop.desc, {
+      this.add.text(width * 0.28, yPos + 42, prop.desc, {
         fontFamily: 'Arial',
-        fontSize: '20px',
+        fontSize: '18px',
         color: '#666666'
       });
       
       // 价格
-      this.add.text(width * 0.75, yPos + 25, `💰${prop.price}`, {
+      this.add.image(width * 0.72, yPos + 28, 'icon_gold').setScale(0.18);
+      this.add.text(width * 0.75, yPos + 20, `${prop.price}`, {
         fontFamily: 'Arial',
-        fontSize: '26px',
+        fontSize: '22px',
         color: '#FFD700',
         fontStyle: 'bold'
       });
       
       // 购买按钮
-      const buyBtn = this.add.text(width * 0.85, yPos + 25, '购买', {
+      const buyBtn = this.add.text(width * 0.85, yPos + 20, '购买', {
         fontFamily: 'Arial',
-        fontSize: '22px',
+        fontSize: '20px',
         color: '#FFFFFF',
         backgroundColor: '#D93A3A',
-        padding: { x: 15, y: 8 }
+        padding: { x: 12, y: 6 }
       }).setOrigin(1, 0).setInteractive({ useHandCursor: true });
       
       buyBtn.on('pointerdown', () => {
         this.buyProp(prop);
       });
       
-      yPos += 130;
+      yPos += 105;
     });
     
     // 观看广告按钮

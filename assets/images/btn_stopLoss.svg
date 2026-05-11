@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <g fill="none" stroke="#333333" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- 盾牌 -->
+    <path d="M100,15 L175,55 L175,105 Q175,150 100,190 Q25,150 25,105 L25,55 Z" fill="#FFFFFF"/>
+    <!-- 盾牌内对勾 -->
+    <path d="M65,100 L90,125 L140,75" stroke="#4CAF50" stroke-width="5" stroke-linecap="round"/>
+    <!-- 盾牌边框装饰线 -->
+    <path d="M50,65 L100,80 L150,65" stroke-width="1.5" opacity="0.3"/>
+  </g>
+</svg>

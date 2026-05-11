@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- 简笔画风格人形 -->
+  <g fill="none" stroke="#333333" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- 头 -->
+    <circle cx="100" cy="55" r="35"/>
+    <!-- 眼睛 -->
+    <circle cx="87" cy="50" r="3" fill="#333333"/>
+    <circle cx="113" cy="50" r="3" fill="#333333"/>
+    <!-- 微笑 -->
+    <path d="M88,65 Q100,75 112,65"/>
+    <!-- 身体 -->
+    <path d="M100,90 L100,150"/>
+    <!-- 手臂 -->
+    <path d="M100,105 L60,130"/>
+    <path d="M100,105 L140,130"/>
+    <!-- 腿 -->
+    <path d="M100,150 L65,195"/>
+    <path d="M100,150 L135,195"/>
+    <!-- 头发 -->
+    <path d="M65,50 Q65,20 85,18 Q100,15 115,18 Q135,20 135,50" fill="#333333" opacity="0.8"/>
+  </g>
+</svg>

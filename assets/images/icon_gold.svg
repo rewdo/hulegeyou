@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <g>
+    <!-- 金币主体 -->
+    <circle cx="100" cy="100" r="80" fill="#FFD700" stroke="#DAA520" stroke-width="3"/>
+    <!-- 内圈 -->
+    <circle cx="100" cy="100" r="55" fill="none" stroke="#DAA520" stroke-width="1.5"/>
+    <!-- 钱币符号 ¥ -->
+    <text x="100" y="115" font-family="serif" font-size="64" font-weight="bold" fill="#B8860B" text-anchor="middle" dominant-baseline="central">¥</text>
+    <!-- 高光 -->
+    <ellipse cx="75" cy="70" rx="25" ry="15" fill="#FFF8DC" opacity="0.4" transform="rotate(-30,75,70)"/>
+  </g>
+</svg>

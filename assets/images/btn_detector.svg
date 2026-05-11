@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <g fill="none" stroke="#333333" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- 放大镜 -->
+    <circle cx="82" cy="82" r="50"/>
+    <!-- 放大镜手柄 -->
+    <line x1="118" y1="118" x2="165" y2="165" stroke-width="6"/>
+    <!-- 镜片内 Z 形折线（表示漏洞/探测） -->
+    <polyline points="65,70 85,55 75,85 95,70" stroke="#D93A3A" stroke-width="2.5"/>
+    <!-- 镜片高光 -->
+    <path d="M65,60 Q75,50 85,55" stroke-width="1.5" opacity="0.3"/>
+  </g>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- 红色圆环 -->
+    <circle cx="100" cy="100" r="85" fill="#FFEBEE" stroke="#F44336" stroke-width="4"/>
+    <!-- 叉号 -->
+    <line x1="60" y1="60" x2="140" y2="140" stroke="#F44336" stroke-width="8"/>
+    <line x1="140" y1="60" x2="60" y2="140" stroke="#F44336" stroke-width="8"/>
+  </g>
+</svg>

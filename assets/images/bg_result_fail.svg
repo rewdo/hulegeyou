@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 1334" width="750" height="1334">
+  <rect width="750" height="1334" fill="#FFEBEE"/>
+  <!-- 温柔装饰 -->
+  <g stroke="#F44336" stroke-width="1.5" fill="none" opacity="0.08">
+    <path d="M0,300 Q200,250 400,350 Q600,450 750,300"/>
+    <path d="M0,900 Q200,850 400,950 Q600,1050 750,900"/>
+  </g>
+  <!-- 小点装饰 -->
+  <g fill="#F44336" opacity="0.08">
+    <circle cx="120" cy="400" r="6"/>
+    <circle cx="630" cy="500" r="8"/>
+    <circle cx="80" cy="800" r="5"/>
+    <circle cx="670" cy="700" r="7"/>
+  </g>
+  <!-- 底部渐变 -->
+  <circle cx="375" cy="1050" r="250" fill="#FFCDD2" opacity="0.12"/>
+</svg>
