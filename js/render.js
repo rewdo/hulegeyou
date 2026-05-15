@@ -15,10 +15,10 @@ export const SCREEN_WIDTH = screenWidth;
 export const SCREEN_HEIGHT = screenHeight;
 export default canvas;
 
-// roundRect polyfill（微信 canvas 不支持原生 roundRect）
-var ctxProto = canvas.getContext('2d').constructor.prototype;
-if (!ctxProto.roundRect) {
-  ctxProto.roundRect = function(x, y, w, h, r) {
+// roundRect 修复 - 微信的 roundRect 参数格式不同，直接挂到 ctx 上
+(function() {
+  var ctx = canvas.getContext('2d');
+  ctx.roundRect = function(x, y, w, h, r) {
     if (r > w / 2) r = w / 2;
     if (r > h / 2) r = h / 2;
     this.moveTo(x + r, y);
