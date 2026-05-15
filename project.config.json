@@ -1,5 +1,9 @@
 {
   "description": "《忽了个悠》反诈主题微信小游戏",
+  "setting": {
+    "urlCheck": false,
+    "es6": true
+  },
   "compileType": "game",
   "libVersion": "2.32.3",
   "appid": "wx5890cbc3c95f6599",

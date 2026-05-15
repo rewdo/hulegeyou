@@ -24,7 +24,7 @@ GameGlobal.gameData = {
 };
 
 // API 基础地址
-GameGlobal.API_BASE = 'https://www.yiouxiaozhan.top/api';
+GameGlobal.API_BASE = 'http://hulegeyou.yiouxiaozhan.top/api';
 
 // 微信 request 请求封装
 GameGlobal.request = function (options) {
