@@ -27,7 +27,16 @@ router.post('/start', async (req, res) => {
     // 检查场景是否解锁
     const unlockedScenes = JSON.parse(user.unlocked_scenes || '[]');
     if (!unlockedScenes.includes(sceneType)) {
-      return res.status(403).json({ code: 403, message: '场景未解锁' });
+      // 自动解锁 1 级基础场景（校园权限、社交福利）
+      const autoUnlockScenes = ['校园权限场景', '社交福利场景'];
+      if (autoUnlockScenes.includes(sceneType)) {
+        unlockedScenes.push(sceneType);
+        await db.query('UPDATE userInfo SET unlocked_scenes = ? WHERE openid = ?', [
+          JSON.stringify(unlockedScenes), openid
+        ]);
+      } else {
+        return res.status(403).json({ code: 403, message: '场景未解锁' });
+      }
     }
     
     // 获取该场景的随机事件（5-8 个）
