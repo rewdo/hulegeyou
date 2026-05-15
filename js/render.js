@@ -16,8 +16,9 @@ export const SCREEN_HEIGHT = screenHeight;
 export default canvas;
 
 // roundRect polyfill（微信 canvas 不支持原生 roundRect）
-if (!CanvasRenderingContext2D.prototype.roundRect) {
-  CanvasRenderingContext2D.prototype.roundRect = function(x, y, w, h, r) {
+var ctxProto = canvas.getContext('2d').constructor.prototype;
+if (!ctxProto.roundRect) {
+  ctxProto.roundRect = function(x, y, w, h, r) {
     if (r > w / 2) r = w / 2;
     if (r > h / 2) r = h / 2;
     this.moveTo(x + r, y);
