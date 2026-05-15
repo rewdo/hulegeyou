@@ -32,4 +32,4 @@ export default canvas;
     this.quadraticCurveTo(x, y, x + r, y);
     this.closePath();
   };
-}
+})();
