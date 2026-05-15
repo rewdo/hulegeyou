@@ -1,24 +1,27 @@
-// Minimal WeChat mini-game adapter for Phaser
+﻿// Minimal WeChat mini-game adapter for Phaser
 // Provides stubs for browser DOM APIs that Phaser needs
 
-var window = window || global;
+// WeChat mini-game context - no global/window/self in this scope
+var wxGlobal = (typeof window !== 'undefined') ? window :
+              (typeof self !== 'undefined') ? self :
+              (typeof global !== 'undefined') ? global : {};
 
 // Canvas is provided by WeChat mini-game
 if (typeof HTMLVideoElement === 'undefined') {
-  global.HTMLVideoElement = function() {};
+  wxwxGlobal.HTMLVideoElement = function() {};
 }
 
 if (typeof HTMLImageElement === 'undefined') {
-  global.HTMLImageElement = function() {};
-  global.Image = function() { this.src = ''; this.width = 0; this.height = 0; };
+  wxwxGlobal.HTMLImageElement = function() {};
+  wxwxGlobal.Image = function() { this.src = ''; this.width = 0; this.height = 0; };
 }
 
 if (typeof HTMLCanvasElement === 'undefined') {
-  global.HTMLCanvasElement = function() {};
+  wxwxGlobal.HTMLCanvasElement = function() {};
 }
 
 if (typeof document === 'undefined') {
-  global.document = {
+  wxwxGlobal.document = {
     createElement: function(tag) {
       if (tag === 'canvas') return wx.createCanvas();
       if (tag === 'img') return new Image();
@@ -40,11 +43,11 @@ if (typeof document === 'undefined') {
 }
 
 if (typeof location === 'undefined') {
-  global.location = { href: '', protocol: 'https:', host: '', search: '', hash: '' };
+  wxGlobal.location = { href: '', protocol: 'https:', host: '', search: '', hash: '' };
 }
 
 if (typeof navigator === 'undefined') {
-  global.navigator = {
+  wxGlobal.navigator = {
     userAgent: 'Mozilla/5.0 WeChat MiniGame',
     platform: 'devtools',
     language: 'zh-CN',
@@ -55,11 +58,11 @@ if (typeof navigator === 'undefined') {
 }
 
 if (typeof screen === 'undefined') {
-  global.screen = { width: 750, height: 1334, availWidth: 750, availHeight: 1334 };
+  wxGlobal.screen = { width: 750, height: 1334, availWidth: 750, availHeight: 1334 };
 }
 
 if (typeof localStorage === 'undefined') {
-  global.localStorage = {
+  wxGlobal.localStorage = {
     _data: {},
     getItem: function(key) { return this._data[key] || null; },
     setItem: function(key, val) { this._data[key] = String(val); },

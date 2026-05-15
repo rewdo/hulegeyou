@@ -1,74 +1,45 @@
 {
-  "description": "《忽了个悠》反诈主题微信小游戏",
+  "description": "忽了个悠 - 反诈主题微信小游戏",
   "setting": {
     "urlCheck": false,
-    "es6": true
+    "es6": true,
+    "minified": true,
+    "uglifyFileName": false,
+    "condition": false,
+    "babelSetting": { "ignore": [], "disablePlugins": [], "outputPath": "" },
+    "ignoreDevUnusedFiles": true
   },
   "compileType": "game",
-  "libVersion": "2.32.3",
-  "appid": "wx5890cbc3c95f6599",
+  "libVersion": "3.16.0",
+  "appid": "wx03e7f1c0553bb836",
   "projectname": "hulegeyou",
   "packOptions": {
     "ignore": [
-      {
-        "value": "backend",
-        "type": "folder"
-      },
-      {
-        "value": "database",
-        "type": "folder"
-      },
-      {
-        "value": "docs",
-        "type": "folder"
-      },
-      {
-        "value": "resources",
-        "type": "folder"
-      },
-      {
-        "value": "DELIVERY.md",
-        "type": "file"
-      },
-      {
-        "value": "PROJECT_SUMMARY.md",
-        "type": "file"
-      },
-      {
-        "value": "deploy.sh",
-        "type": "file"
-      }
-    ],
-    "include": []
+      {"value": "scenes", "type": "folder"},
+      {"value": "utils", "type": "folder"},
+      {"value": "backend", "type": "folder"},
+      {"value": "database", "type": "folder"},
+      {"value": "docs", "type": "folder"},
+      {"value": "resources", "type": "folder"},
+      
+      {"value": "node_modules", "type": "folder"},
+      {"value": "scripts", "type": "folder"},
+      {"value": "social", "type": "folder"},
+      {"value": "wechat-adapter.js", "type": "file"},
+      {"value": "rollup.config.mjs", "type": "file"},
+      {"value": "game.src.js", "type": "file"},
+      {"value": "package.json", "type": "file"},
+      {"value": "package-lock.json", "type": "file"},
+      {"value": "DELIVERY.md", "type": "file"},
+      {"value": "PROJECT_SUMMARY.md", "type": "file"},
+      {"value": "deploy.sh", "type": "file"},
+      {"value": "README.md", "type": "file"},
+      {"value": "IMPROVEMENT_PLAN.md", "type": "file"}
+    ]
   },
-  "setting": {
-    "urlCheck": true,
-    "es6": true,
-    "enhance": true,
-    "postcss": true,
-    "minified": true,
-    "minifyWXML": true,
-    "minifyWXSS": true,
-    "coverView": true,
-    "autoAudits": false,
-    "uglifyFileName": false,
-    "uploadWithSourceMap": true,
-    "compileHotReLoad": false,
-    "useIsolateContext": true,
-    "useMultiFrameRuntime": true,
-    "babelSetting": {
-      "ignore": [],
-      "disablePlugins": [],
-      "outputPath": ""
-    },
-    "useCompilerPlugins": false,
-    "packNpmManually": false,
-    "packNpmRelationList": []
-  },
-  "condition": {},
+  "condition": false,
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2
-  },
-  "simulatorPluginLibVersion": {}
+  }
 }
