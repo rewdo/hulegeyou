@@ -51,7 +51,7 @@
       {"value": "package-lock.json", "type": "file"}
     ]
   },
-  "condition": false,
+  "condition": {"current": 0, "list": []},
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2
